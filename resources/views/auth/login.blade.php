@@ -61,7 +61,7 @@
             </div>
 
             <div class="text-center">
-                <a href="{{route('users.register')}}" class="txt2 hov1">
+                <a href="{{route('register')}}" class="txt2 hov1">
                     Sign Up
                 </a>
             </div>

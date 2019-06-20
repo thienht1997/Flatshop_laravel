@@ -52,8 +52,8 @@
                                        </ul>
                                     </div>        
                                    @else
-                                   <li><a href="{{route('users.login')}}" class="log">Login</a></li>
-                                   <li><a href="{{route('users.register')}}" class="reg">Register</a></li>
+                                   <li><a href="{{route('login')}}" class="log">Login</a></li>
+                                   <li><a href="{{route('register')}}" class="reg">Register</a></li>
                                    @endif       
                                 </ul>
                              </div>
