@@ -47,10 +47,10 @@
                                    <div class="dropdown">
                                        <button  style="position: relative; left: 72px; top: -7px; class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Welcome {{Auth::user()->name}}
                                        <span class="caret"></span></button>
-                                       <ul class="dropdown-menu"  style="left: 52px; top: 24px;">
+                                       <ul class="dropdown-menu" style="left: 60px; top: 27px;">
                                        <form action="{{route('logout')}}" method="POST">
                                           @csrf
-                                         <li><button type="submit" style="position: relative; left: 9px; top: 0px;">Logout</button></li>
+                                         <button type="submit" style="position: relative; left: 38px; top: 0px;">Logout</button>
                                        </form>
                                        </ul>
                                     </div>        

@@ -26,17 +26,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        if(Auth::check()){
-            if(Auth::user()->level == 1){
-            return redirect()->route('products.list');
-            }
-            if(Auth::user()->level == 2){
-            return redirect()->route('products.list');
-            }
-            if(Auth::user()->level == 3){
-            return redirect()->route('shop.index','all');
-            }
-        }
+        return redirect()->route('shop.index','all');
     }
 
     public function dashboard()
