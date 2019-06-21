@@ -45,14 +45,12 @@
                                 <ul class="usermenu">
                                    @if(Auth::check())
                                    <div class="dropdown">
-                                       <button  style="position: relative; left: 72px; top: -7px; class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Welcome {{Auth::user()->name}}
-                                       <span class="caret"></span></button>
-                                       <ul class="dropdown-menu" style="left: 60px; top: 27px;">
+                                       <li><a href="{{route('shop.index','all')}}" class="log">Welcome {{Auth::user()->name}}</a></li>
                                        <form action="{{route('logout')}}" method="POST">
                                           @csrf
-                                         <button type="submit" style="position: relative; left: 38px; top: 0px;">Logout</button>
+                                         <button class="btn btn-link" type="submit" style="position: relative; left: 38px; top: 0px;">Logout</button>
                                        </form>
-                                       </ul>
+                                       
                                     </div>        
                                    @else
                                    <li><a href="{{route('login')}}" class="log">Login</a></li>
