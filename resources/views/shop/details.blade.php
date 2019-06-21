@@ -44,6 +44,7 @@ Detail
                 <sup>
                   VND
                 </sup>
+                <strike class="price" style="color:gray; font-size:15px; left: 101px; top: 2px;">{{number_format($product->price/80*100,0 ,',','.')}}VNĐ</strike>
               </span>
             </div>
             <hr class="border">
@@ -101,8 +102,8 @@ Detail
                   src="{{ asset('layouts/img/'.$product->image) }}" alt="Product Name"></a></div>
             <div class="productname">{{$product->name}}</div>
             <h4 class="price">{{$product->price}}</h4>
-            <div class="button_group"><a href="{{route('cart.add', $product->id)}}"><button class="button add-cart" type="button">Add
-                  To Cart</button></a><button class="button compare" type="button"><i
+            <strike class="price" style="color:gray; font-size:15px">{{number_format($product->price/80*100,0 ,',','.')}}đ</strike>
+            <div class="button_group"><a href="{{route('cart.add', $product->id)}}"><button class="button add-cart" type="button"><span class="glyphicon glyphicon-shopping-cart"></span></button></a><button class="button compare" type="button"><i
                     class="fa fa-exchange"></i></button><button class="button wishlist" type="button"><i
                     class="fa fa-heart-o"></i></button></div>
           </div>

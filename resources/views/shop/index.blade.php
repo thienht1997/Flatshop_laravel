@@ -89,6 +89,7 @@ Home
                         </div>
                         <div class="productname">{{$product->name}}</div>
                         <h4 class="price">{{number_format($product->price,0 ,',','.')}}đ</h4>
+                        <strike class="price" style="color:gray; font-size:15px">{{number_format($product->price/80*100,0 ,',','.')}}đ</strike>
                         <div class="button_group"><a href="{{route('cart.add', $product->id)}}">
                              
                                    

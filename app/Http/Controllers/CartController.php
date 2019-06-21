@@ -51,12 +51,15 @@ class CartController extends Controller
           $message->from('thienht1997ttt@gmail.com', 'Flat Shop');
           $message->to($email, $email);
           $message->subject('Xác nhận hóa đơn mua hàng');
+          Cart::destroy();
       });
       return redirect()->back() 
           ->with('success', 'Quý khách đã đặt hàng thành công!
           • Sản phẩm của Quý khách sẽ được chuyển đến Địa chỉ có trong phần Thông tin Khách hàng của chúng Tôi sau thời gian 2 đến 3 ngày, tính từ thời điểm này.
           • Nhân viên giao hàng sẽ liên hệ với Quý khách qua Số Điện thoại trước khi giao hàng 24 tiếng.
             Cám ơn Quý khách đã sử dụng Sản phẩm của Công ty chúng Tôi!');
+      
     }
+    
 }
 
