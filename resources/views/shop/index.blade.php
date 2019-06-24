@@ -64,8 +64,7 @@ Home
             <a href="{{route('shop.index', 2)}}"><div class="promo-box"><img src="images/promotion-02.png" alt=""></div></a>
             </div>
             <div class="col-md-4 col-sm-4 col-xs-4">
-            <a href="{{route('shop.index','all')}}"><div class="promo-box"><img src="images/promotion-03.png"
-             style="height: 112.5px" alt=""></div></a>
+            <a href="{{route('shop.index','all')}}"><div class="promo-box"><img src="images/promotion-03.png" alt=""></div></a>
             </div>
          </div>
       </div>
