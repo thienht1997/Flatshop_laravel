@@ -1,4 +1,14 @@
- {{-- header --}}
+ <head>
+      <style>
+            #b {
+              display: none;
+            }
+            
+            #a:hover #b {
+              display: block;
+            }
+      </style>
+ </head>
  <body id="home">
         <div class="wrapper">
            <div class="header">
@@ -44,9 +54,9 @@
                              <div class="col-md-3">
                                 <ul class="usermenu">
                                    @if(Auth::check())
-                                   <div class="dropdown">
+                                   <div class="dropdown" id='a'>
                                        <li><a href="{{route('shop.index','all')}}" class="log">Welcome {{Auth::user()->name}}</a></li>
-                                       <form action="{{route('logout')}}" method="POST">
+                                       <form id='b'action="{{route('logout')}}" method="POST">
                                           @csrf
                                          <button class="btn btn-link" type="submit" style="position: relative; left: 38px; top: 0px;">Logout</button>
                                        </form>
