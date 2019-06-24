@@ -92,8 +92,9 @@ Admin
 									<thead>
 										<tr class="bg-primary">
 											<th>#</th>
-											<th width="30%">Tên Sản phẩm</th>
+											<th width="20%">Tên Sản phẩm</th>
 											<th>Giá sản phẩm</th>
+											<th> Giảm giá (%)</th>
 											<th width="20%">Ảnh sản phẩm</th>
 											<th>Danh mục</th>
 											<th>Tùy chọn</th>
@@ -110,6 +111,7 @@ Admin
 											<th scope="row">{{ ++$key }}</th>
 											<td>{{$product->name}}</td>
 											<td>{{number_format($product->price,0 ,',','.')}}đ</td>
+											<td>{{$product->sale}}</td>
 											<td>
 												@if(($product->image) == null)
 												<p> Trống </p>

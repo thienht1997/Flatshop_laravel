@@ -47,6 +47,8 @@ class ProductController extends Controller
         $product = new Product();
         $product->name = $request->name;
         $product->price = $request->price;
+        $product->category_id = $request->category_id;
+        $product->sale = $request->sale;
         
         if ($request->hasFile('image')) {
             $image = $request->file('image');
@@ -162,6 +164,7 @@ class ProductController extends Controller
                 'name' => 'required|min:3|max:100',
                 'price' => 'required|min:0|max:500',
                 'image' => 'max:2048',
+                'sale' =>  'required|digits_between:0,100',
             ]
         );
         // mimes:jpg,jpeg,png,gif|

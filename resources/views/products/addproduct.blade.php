@@ -45,6 +45,10 @@ Add product
 										<input required type="number" name="price" class="form-control">
 									</div>
 									<div class="form-group" >
+										<label>Giảm giá(%)</label>
+										<input required type="text" name="sale" class="form-control">
+									</div>
+									<div class="form-group" >
 											<label>Danh mục</label>
 											<select required name="category_id" class="form-control">
 													@foreach ($categories as $category)											

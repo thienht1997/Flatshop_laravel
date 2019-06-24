@@ -40,6 +40,10 @@ Edit
 										<input required type="number" name="price" value="{{ $product->price }}" class="form-control">
 									</div>
 									<div class="form-group" >
+											<label>Giảm giá</label>
+											<input required type="number" name="sale" value="{{ $product->sale }}" class="form-control">
+										</div>
+									<div class="form-group" >
 											<label>Danh mục</label>
 											<select required name="category_id" class="form-control">	
 													<option value="{{$product->category->id}}">{{$product->category->name}}</option>

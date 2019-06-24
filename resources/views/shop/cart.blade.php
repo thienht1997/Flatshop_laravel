@@ -120,7 +120,14 @@
 						  <h5>{{Session::get('success')}}<h5>
 				      </ul>
 			      </div>
-		        @endif
+            @endif
+            <div class="alert alert-danger">
+                @if ($errors->any())
+                  @foreach($errors->all() as $nameError)
+                    <h6>{{ $nameError }}</h6>
+                  @endforeach
+                @endif
+            </div>
               <form method="POST" action="{{route('cart.payment')}}">
                 @csrf
                 <h5>Email address</h5>

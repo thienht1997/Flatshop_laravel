@@ -64,7 +64,8 @@ Home
             <a href="{{route('shop.index', 2)}}"><div class="promo-box"><img src="images/promotion-02.png" alt=""></div></a>
             </div>
             <div class="col-md-4 col-sm-4 col-xs-4">
-            <a href="{{route('shop.index','all')}}"><div class="promo-box"><img src="images/promotion-03.png" style="height: 112.5px" alt=""></div></a>
+            <a href="{{route('shop.index','all')}}"><div class="promo-box"><img src="images/promotion-03.png"
+             style="height: 112.5px" alt=""></div></a>
             </div>
          </div>
       </div>
@@ -83,13 +84,27 @@ Home
                   @foreach($products as $key => $product)
                   <div class="col-md-3 col-sm-6">
                      <div class="products">
-                        <div class="offer">- %20</div>
+
+                     @if ($product->sale!==0)   
+                     <div class="offer">
+                           -{{$product->sale}}%
+                     </div>
+                     @endif
                         <div class="thumbnail"><a href="{{route('shop.details',  $product->id)}}"><img width="183"
                                  height="80" src="{{ asset('layouts/img/'.$product->image) }}" alt="Product Name"></a>
                         </div>
                         <div class="productname">{{$product->name}}</div>
+                        @if ($product->sale==0)  
                         <h4 class="price">{{number_format($product->price,0 ,',','.')}}đ</h4>
-                        <strike class="price" style="color:gray; font-size:15px">{{number_format($product->price/80*100,0 ,',','.')}}đ</strike>
+                        @else
+                        <h4 class="price">{{number_format($product->price*(100-$product->sale)/100,0 ,',','.')}}đ</h4>
+                        @endif
+
+                        @if ($product->sale!==0)  
+                        <strike class="price" style="color:gray; font-size:15px">{{number_format($product->price,0 ,',','.')}}đ</strike>
+                        @else
+                        <strike class="price" style="block:none; color:gray; font-size:15px">-</strike>
+                        @endif
                         <div class="button_group"><a href="{{route('cart.add', $product->id)}}">
                              
                                    
@@ -105,20 +120,36 @@ Home
                <div class="row">
                   @foreach($products_1 as $key => $product)
                   <div class="col-md-3 col-sm-6">
-                     <div class="products">
-                        <div class="offer">- %20</div>
-                        <div class="thumbnail"><a href="{{route('shop.details',  $product->id)}}"><img width="183"
-                                 height="80" src="{{ asset('layouts/img/'.$product->image) }}" alt="Product Name"></a>
+                        <div class="products">
+   
+                        @if ($product->sale!==0)   
+                        <div class="offer">
+                              -{{$product->sale}}%
                         </div>
-                        <div class="productname">{{$product->name}}</div>
-                        <h4 class="price">{{number_format($product->price,0 ,',','.')}}đ</h4>
-                        <div class="button_group"> <a href="{{route('cart.add', $product->id)}}">
-                           <button class="button add-cart" type="button"><span class="glyphicon glyphicon-shopping-cart"></span></button></a>
-                           {{-- <button class="button compare" type="button"><i class="fa fa-exchange"></i></button> --}}
-                           <button class="button wishlist" type="button"><i class="fa fa-heart-o"></i></button></div>
-                              
+                        @endif
+                           <div class="thumbnail"><a href="{{route('shop.details',  $product->id)}}"><img width="183"
+                                    height="80" src="{{ asset('layouts/img/'.$product->image) }}" alt="Product Name"></a>
+                           </div>
+                           <div class="productname">{{$product->name}}</div>
+                           @if ($product->sale==0)  
+                           <h4 class="price">{{number_format($product->price,0 ,',','.')}}đ</h4>
+                           @else
+                           <h4 class="price">{{number_format($product->price*(100-$product->sale)/100,0 ,',','.')}}đ</h4>
+                           @endif
+   
+                           @if ($product->sale!==0)  
+                           <strike class="price" style="color:gray; font-size:15px">{{number_format($product->price,0 ,',','.')}}đ</strike>
+                           @else
+                           <strike class="price" style="block:none; color:gray; font-size:15px">-</strike>
+                           @endif
+                           <div class="button_group"><a href="{{route('cart.add', $product->id)}}">
+                                
+                                      
+                                    
+                              <button class="button add-cart" type="button"> <span class="glyphicon glyphicon-shopping-cart"></span></button></a>
+                              <button class="button wishlist" type="button"><i class="fa fa-heart-o"></i></button></div>
+                        </div>
                      </div>
-                  </div>
                   @endforeach
             </li>
          </ul>

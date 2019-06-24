@@ -14,7 +14,7 @@ class CartController extends Controller
     {  
       $product= Product::find($id);
       Cart::add([
-        ['id' => $product->id, 'name' =>  $product->name, 'qty' => 1, 'price' =>  $product->price,'weight'=>'0','options' => ['img' =>$product->image]]    
+        ['id' => $product->id, 'name' =>  $product->name, 'qty' => 1, 'price' =>$product->price*(100-$product->sale)/100,'weight'=>'0','options' => ['img' =>$product->image, 'sale'=>$product->sale]]    
       ]);
 
       return back();
@@ -22,7 +22,6 @@ class CartController extends Controller
  
     public function show()
     {
-      
         $categories = Category::all();
         $product_data =  Cart::content();
         $total_price = Cart::total();
@@ -42,6 +41,7 @@ class CartController extends Controller
 
     public function payment(Request $request)
     {
+      $this->ValidateConfirm();
       $paymentData['product_data'] =  Cart::content();
       $paymentData['info'] = $request->all();
 
@@ -60,6 +60,17 @@ class CartController extends Controller
             Cám ơn Quý khách đã sử dụng Sản phẩm của Công ty chúng Tôi!');
       
     }
-    
+    public function ValidateConfirm()
+    {
+        return request()->validate(
+            [
+                'name' => 'required|min:3|max:100',
+                'email' => 'required|min:5|max:500',
+                'number' => 'required|numeric',
+                'address' => 'required|min:5|max:500',
+            ]
+        );
+        // mimes:jpg,jpeg,png,gif|
+    }
 }
 

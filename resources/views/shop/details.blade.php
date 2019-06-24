@@ -40,11 +40,24 @@ Detail
             <div class="price">
               Price :
               <span class="new_price">
-                {{$product->price}}
-                <sup>
-                  VND
-                </sup>
-                <strike class="price" style="color:gray; font-size:15px; left: 101px; top: 2px;">{{number_format($product->price/80*100,0 ,',','.')}}VNĐ</strike>
+                  @if ($product->sale==0)  
+                  {{number_format($product->price,0 ,',','.')}}đ
+                  <sup>
+                      VND
+                  </sup>
+                  @else
+                  {{number_format($product->price*(100-$product->sale)/100,0 ,',','.')}}
+                  <sup>
+                      VND
+                  </sup>
+                  @endif
+
+                  @if ($product->sale!==0)  
+                  <strike class="price" style="color:gray; font-size:15px">{{number_format($product->price,0 ,',','.')}}đ</strike>
+                  @else
+                  <strike class="price" style="block:none; color:gray; font-size:15px">-</strike>
+                  @endif
+             
               </span>
             </div>
             <hr class="border">
