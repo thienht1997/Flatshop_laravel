@@ -61,16 +61,8 @@ Detail
                 <a href="{{route('cart.add', $product->id)}}"><button class="button">
                   <span class="glyphicon glyphicon-shopping-cart"></span>
                 </button></a>
-                <button class="button compare">
-                  <i class="fa fa-exchange">
-                  </i>
-                </button>
                 <button class="button favorite">
                   <i class="fa fa-heart-o">
-                  </i>
-                </button>
-                <button class="button favorite">
-                  <i class="fa fa-envelope-o">
                   </i>
                 </button>
               </div>

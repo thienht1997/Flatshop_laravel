@@ -95,7 +95,6 @@ Home
                                    
                                  
                            <button class="button add-cart" type="button"> <span class="glyphicon glyphicon-shopping-cart"></span></button></a>
-                           <button class="button compare" type="button"><i class="fa fa-exchange"></i></button>
                            <button class="button wishlist" type="button"><i class="fa fa-heart-o"></i></button></div>
                      </div>
                   </div>
@@ -115,7 +114,7 @@ Home
                         <h4 class="price">{{number_format($product->price,0 ,',','.')}}đ</h4>
                         <div class="button_group"> <a href="{{route('cart.add', $product->id)}}">
                            <button class="button add-cart" type="button"><span class="glyphicon glyphicon-shopping-cart"></span></button></a>
-                           <button class="button compare" type="button"><i class="fa fa-exchange"></i></button>
+                           {{-- <button class="button compare" type="button"><i class="fa fa-exchange"></i></button> --}}
                            <button class="button wishlist" type="button"><i class="fa fa-heart-o"></i></button></div>
                               
                      </div>
