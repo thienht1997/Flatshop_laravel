@@ -121,13 +121,15 @@
 				      </ul>
 			      </div>
             @endif
-            <div class="alert alert-danger">
+            
                 @if ($errors->any())
+                <div class="alert alert-danger">
                   @foreach($errors->all() as $nameError)
                     <h6>{{ $nameError }}</h6>
                   @endforeach
+                </div>
                 @endif
-            </div>
+            
               <form method="POST" action="{{route('cart.payment')}}">
                 @csrf
                 <h5>Email address</h5>
