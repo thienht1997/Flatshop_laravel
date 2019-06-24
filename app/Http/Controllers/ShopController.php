@@ -15,11 +15,11 @@ class ShopController extends Controller
         $categories = Category::all();
         if($id=='all'){
         $category_name = 'Hot';
-        $products =Product::where('id','<', 27)
+        $products =Product::where('id','<', 40)
                             ->take(18)
                             ->get();
-        $products_1 =Product::where('id','>', 27)
-                            ->take(18)
+        $products_1 =Product::where('id','>=', 40)
+                            ->take(100)
                             ->get();
         }
         else
