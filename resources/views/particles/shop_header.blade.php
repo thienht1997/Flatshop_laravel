@@ -77,7 +77,7 @@
                              <form action="{{route('shop.index','all')}}"  method="get">
                                    @csrf
                                    <input class="search-submit" type="submit" value="">
-                                   <input class="search-input" placeholder="Enter your search term..." type="text" value="" name="keyword">
+                                   <input class="search-input" placeholder="Enter your search term..." type="text" value="" name="keyword"  value="{{ (isset($_GET['keyword'])) ? $_GET['keyword'] : '' }}">
                                  </form>
                              </li>
                              <li class="option-cart">

@@ -65,4 +65,18 @@ class ShopController extends Controller
      $categories = Category::all();
      return view('particles.shop_header', compact( 'categories','product_data','count','total_price'));
     }
+
+    public function search(Request $request)
+    {
+        $keyword = $request->input('keyword');
+        if (!$keyword) {
+            return redirect()->route('shop.index','all');
+        }
+        $products = Product::where('name', 'LIKE', '%' . $keyword . '%')
+            ->paginate(5);
+
+        $product = Product::all();
+        $categories = Category::all();
+        return view('products.list', compact('products', 'product','categories'));
+    }
 }

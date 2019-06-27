@@ -13,21 +13,10 @@ Admin
 		
 		<div class="row">
 			<div class="col-lg-12">
-				<h1 class="page-header">Sản phẩm</h1>
+				<h2 class="page-header">Sản phẩm</h2>
 			</div>
 		</div><!--/.row-->
-		@if (Auth::check())
-		<div class="alert alert-success">
-		Bạn đang đăng nhập với quyền 
-		@if( Auth::user()->level == 1)
-			{{ "SuperAdmin" }}
-		@elseif( Auth::user()->level == 2)
-			{{ "Admin" }}
-		@elseif( Auth::user()->level == 3)
-			{{ "Thành viên" }}
-		@endif
-		</div>
-		@endif
+	
 	
 		@if(Session::has('success'))
 			<div class="alert alert-success">
@@ -45,49 +34,42 @@ Admin
 
 					{{-- Loc theo danh muc --}}
 					<form action="{{ route('products.filterByCategory') }}" method="get">
-							@csrf
-							 <div class="modal-content">
-								 <div class="modal-header">
-									 <button type="button" class="close" data-dismiss="modal">&times;</button>
-								 </div>
-								 <div class="modal-body">
-									 <!--Lọc theo danh mục -->
-									 <div class="select-by-program">
-										 <div class="form-group row">
-											 <label  class="col-sm-5 col-form-label border-right">Lọc sản phẩm theo danh mục</label>
-											 <div class="col-sm-7">
-												 <select class="custom-select w-100" name="category_id">
-													 <option value="">Chọn danh mục</option>
-													 @foreach($categories as $category)
-														 @if(isset($categoryFilter))
-															 @if($category->id == $categoryFilter->id)
-																 <option value="{{$category->id}}" selected >{{ $category->name }}</option>
-															 @else
-																 <option value="{{$category->id}}">{{ $category->name }}</option>
-															 @endif
-														 @else
-															 <option value="{{$category->id}}">{{ $category->name }}
-															 </option>
-														 @endif
-													 @endforeach
-												 </select>
-											 </div>
-										 </div>
-										 <!-- </form> -->
-									 </div>
-									 <!--End-->
-				 
-								 </div>
-								 <div class="modal-footer">
-									 <input type="submit" id="submit" class="btn btn-primary" value="Chọn">
-								 </div>
-							 </div>
-						 </form>
-
+						@csrf
+					<h4 style="position: relative; left: 16px; top: 9px;">Lọc sản phẩm theo danh mục  <select onchange="this.form.submit()" class="custom-select w-100" name="category_id" >
+						<option value="">Chọn danh mục</option>
+						@foreach($categories as $category)
+							@if(isset($categoryFilter))
+								@if($category->id == $categoryFilter->id)
+									<option value="{{$category->id}}" selected >{{ $category->name }}</option>
+								@else
+									<option value="{{$category->id}}">{{ $category->name }}</option>
+								@endif
+							@else
+								<option value="{{$category->id}}">{{ $category->name }}
+								</option>
+							@endif
+						@endforeach
+					</select>
+					</h4>
+					</form>
+								 
 					<div class="panel-body">
 						<div class="bootstrap-table">
 							<div class="table-responsive">
-								<a href="{{route('products.create')}}" class="btn btn-primary">Thêm sản phẩm</a>
+								<a href="{{route('products.create')}}" class="btn btn-primary" style="position: relative; left: -194px; top: 13px;">Thêm sản phẩm</a>
+								<form class="navbar-form navbar-left" action="{{ route('products.search') }}" method="get">
+									@csrf
+									<div class="row">
+										<div class="col-8">
+											<div class="form-group">
+												<input type="text" class="form-control" name="keyword" placeholder="Search" value="{{ (isset($_GET['keyword'])) ? $_GET['keyword'] : '' }}" style="position: relative; left: 767px; top: 12px;">
+											</div>
+										</div>
+										<div class="col-4">
+											<button type="submit" class="btn btn-default"  style="position: relative; left: 975px; top: -22px;">Tìm kiếm</button>
+										</div>
+									</div>
+							</form>	
 								<table class="table table-bordered" style="margin-top:20px;">				
 									<thead>
 										<tr class="bg-primary">
@@ -116,7 +98,9 @@ Admin
 												@if(($product->image) == null)
 												<p> Trống </p>
 												@else 
-												<img width="300px" height="171px" src="img/{{$product->image}}" class="thumbnail">
+												<center>
+												<img width="100px" height="80px" src="img/{{$product->image}}" class="thumbnail">
+												</center>
 												@endif
 											</td>
 											<td>{{$product->category['name']}}</td>
@@ -127,73 +111,7 @@ Admin
 										</tr>
 										@endforeach
 										@endif
-							
 										
-										{{-- <tr>
-											<td>2</td>
-											<td>iPhone 7 Plus 32GB quốc tế Mate Black</td>
-											<td>21.990.000 VND</td>
-											<td>
-												<img width="200px" src="img/iphone7-plus-black-select-2016.jpg" class="thumbnail">
-											</td>
-											<td>iPhone</td>
-											<td>
-												<a href="#" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i> Sửa</a>
-												<a href="#" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Xóa</a>
-											</td>
-										</tr>
-										<tr>
-											<td>3</td>
-											<td>iPhone 7 Plus 32GB quốc tế Mate Black</td>
-											<td>21.990.000 VND</td>
-											<td>
-												<img width="200px" src="img/iphone7-plus-black-select-2016.jpg" class="thumbnail">
-											</td>
-											<td>iPhone</td>
-											<td>
-												<a href="#" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i> Sửa</a>
-												<a href="#" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Xóa</a>
-											</td>
-										</tr>
-										<tr>
-											<td>4</td>
-											<td>iPhone 7 Plus 32GB quốc tế Mate Black</td>
-											<td>21.990.000 VND</td>
-											<td>
-												<img width="200px" src="img/iphone7-plus-black-select-2016.jpg" class="thumbnail">
-											</td>
-											<td>iPhone</td>
-											<td>
-												<a href="#" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i> Sửa</a>
-												<a href="#" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Xóa</a>
-											</td>
-										</tr>
-										<tr>
-											<td>5</td>
-											<td>iPhone 7 Plus 32GB quốc tế Mate Black</td>
-											<td>21.990.000 VND</td>
-											<td>
-												<img width="200px" src="img/iphone7-plus-black-select-2016.jpg" class="thumbnail">
-											</td>
-											<td>iPhone</td>
-											<td>
-												<a href="#" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i> Sửa</a>
-												<a href="#" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Xóa</a>
-											</td>
-										</tr>
-										<tr>
-											<td>6</td>
-											<td>iPhone 7 Plus 32GB quốc tế Mate Black</td>
-											<td>21.990.000 VND</td>
-											<td>
-												<img width="200px" src="img/iphone7-plus-black-select-2016.jpg" class="thumbnail">
-											</td>
-											<td>iPhone</td>
-											<td>
-												<a href="#" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i> Sửa</a>
-												<a href="#" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Xóa</a>
-											</td>
-										</tr> --}}
 									</tbody>
 								</table>			
 								<div class="col-6">

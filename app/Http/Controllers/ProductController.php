@@ -16,7 +16,11 @@ class ProductController extends Controller
 
     public function index()
     {
-        $products = Product::paginate(5);
+        $products = Product::where('id', '<', 100)
+                            ->orderBy('id', 'DESC')
+                            ->paginate(15);
+                    
+                   
         $categories = Category::all();
         return view('products.list', compact('products', 'categories'));
     }
@@ -154,7 +158,8 @@ class ProductController extends Controller
             ->paginate(5);
 
         $product = Product::all();
-        return view('products.list', compact('products', 'product'));
+        $categories = Category::all();
+        return view('products.list', compact('products', 'product','categories'));
     }
 
     public function ValidateProduct()
