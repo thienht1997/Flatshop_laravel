@@ -88,8 +88,6 @@ Route::group(['prefix' => 'shop'], function () {
     Route::get('/{id}/details','ShopController@details')->name('shop.details');
     Route::get('/header','ShopController@showcategory')->name('shop.showcategory');
     Route::get('/search','ShopController@search')->name('shop.search');
-
-
 });
 
 

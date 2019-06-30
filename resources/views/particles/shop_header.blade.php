@@ -74,7 +74,7 @@
                        <div class="header_bottom">
                           <ul class="option">
                              <li id="search" class="search">
-                             <form action="{{route('shop.index','all')}}"  method="get">
+                             <form action="{{route('shop.search')}}"  method="get">
                                    @csrf
                                    <input class="search-submit" type="submit" value="">
                                    <input class="search-input" placeholder="Enter your search term..." type="text" value="" name="keyword"  value="{{ (isset($_GET['keyword'])) ? $_GET['keyword'] : '' }}">

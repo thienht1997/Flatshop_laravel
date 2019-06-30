@@ -14,7 +14,6 @@ class ShopController extends Controller
         $category = Category::find($id);
         $categories = Category::all();
         if($id=='all'){
-        $category_name = 'Hot';
         $products =Product::where('id','<', 40)
                             ->take(18)
                             ->get();
@@ -24,7 +23,6 @@ class ShopController extends Controller
         }
         else
         {
-        $category_name = $category->name;
         $products =Product::where('category_id', $id)
                             ->take(25)
                             ->get();
@@ -35,7 +33,7 @@ class ShopController extends Controller
         }
 
         $product_data =  Cart::content();   
-        return view('shop.index', compact('products', 'products_1', 'categories','product_data','category_name'));
+        return view('shop.index', compact('products', 'products_1', 'categories','product_data','category'));
     }
 
     /**
@@ -66,17 +64,5 @@ class ShopController extends Controller
      return view('particles.shop_header', compact( 'categories','product_data','count','total_price'));
     }
 
-    public function search(Request $request)
-    {
-        $keyword = $request->input('keyword');
-        if (!$keyword) {
-            return redirect()->route('shop.index','all');
-        }
-        $products = Product::where('name', 'LIKE', '%' . $keyword . '%')
-            ->paginate(5);
-
-        $product = Product::all();
-        $categories = Category::all();
-        return view('products.list', compact('products', 'product','categories'));
-    }
+   
 }

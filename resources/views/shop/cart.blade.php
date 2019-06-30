@@ -4,6 +4,16 @@
     Shopping cart
 @endsection
 @section('content')
+        <script>
+          let confirmDel = () =>{
+            let checkstr =  confirm('Are you sure you want to delete this item?');
+          if(checkstr == true){
+              return true;
+          }else{
+              return false;
+          }
+          }
+        </script>
 
         <div class="clearfix">
         </div>
@@ -95,7 +105,7 @@
                       </h5>
                     </td>
                     <td>
-                      <a href="{{route('cart.detele',$product->rowId)}}">
+                      <a href="{{route('cart.detele',$product->rowId)}}" onclick="return confirmDel()";>
                         <img src="images/remove.png" alt="">
                       </a>
                     </td>
@@ -103,10 +113,11 @@
                     @endforeach
                 </tbody>
               </table>
+              
               <div>
                   <h4>Total Price: {{$total_price}}đ</h4><br>
                   <a href="{{route('shop.index','all')}}"><button>Continue Buy </button></a>               
-                  <a href="{{route('cart.detele','all')}}"><button>Detele all item</button></a>
+                  <a href="{{route('cart.detele','all')}}"><button  onclick="return confirm('Are you sure you want to delete all item?')">Detele all item</button></a>
                 </div>
                <br>
                <br>

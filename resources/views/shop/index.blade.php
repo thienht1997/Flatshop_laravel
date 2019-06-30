@@ -74,7 +74,12 @@ Home
 <div class="container_fullwidth">
    <div class="container">
       <div class="hot-products">
-         <h3 class="title"><strong>Sản phẩm |</strong> {{$category_name}}</h3>
+         <h3 class="title"><strong>Sản phẩm |</strong> 
+            @if (!$category)
+            All</h3>
+            @else
+            {{$category->name}}</h3>
+            @endif
          <div class="control"><a id="prev_hot" class="prev" href="#">&lt;</a><a id="next_hot" class="next"
                href="#">&gt;</a></div>
          <ul id="hot">
