@@ -10,6 +10,9 @@
             @csrf
             <span class="login100-form-title p-b-37">
                 Sign In
+            <h6> (Demo account</h6>
+            <h6> Username: demo@gmail.com</h6>
+            <h6> password: demo123456789)</h6>
             </span>
 
             <div class="wrap-input100 validate-input m-b-20" data-validate="Enter username or email">
