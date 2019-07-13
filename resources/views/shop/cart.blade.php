@@ -13,6 +13,11 @@
               return false;
           }
           }
+
+          let updateCart = (qty, rowId) =>{
+            alert("???");
+
+          }
         </script>
 
         <div class="clearfix">
@@ -91,11 +96,7 @@
                       </h5>
                     </td>
                     <td>
-                      <select name="">
-                        <option selected value="1" selected>
-                          {{$product->qty}}
-                        </option>              
-                      </select>
+                    <input type ="number" value="{{$product->qty}}" style="width:70px" onchange="updateCart(this.value,'{{$product->rowId}}')">
                     </td>
                     <td>
                       <h5>
