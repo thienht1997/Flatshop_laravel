@@ -72,7 +72,7 @@ return [
             'database' => env('dap9eu0hpnthak'),
             'username' => env('bapwawysilgkzw'),
             'password' => env('59dad534dc08881ed865e38d351324d3f0020dcc10d7c591a71bec60b9f32c2e'),
-            'charset' => 'utf8',
+            'charset' => 'utf8mb4',
             'prefix' => '',
             'prefix_indexes' => true,
             'schema' => 'public',
