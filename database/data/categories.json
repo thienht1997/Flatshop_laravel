@@ -1,1 +1,38 @@
-[{"id":1,"name":"Hoa trang tr\u00ed","created_at":"2019-05-28 16:20:56","updated_at":"2019-06-03 01:35:52"},{"id":2,"name":"Hoa c\u01b0\u1edbi","created_at":"2019-05-28 16:21:36","updated_at":"2019-06-03 01:35:58"},{"id":3,"name":"Hoa sinh nh\u1eadt","created_at":"2019-05-28 16:21:40","updated_at":"2019-06-03 01:36:05"},{"id":7,"name":"Hoa chia bu\u1ed3n","created_at":"2019-05-28 17:01:34","updated_at":"2019-06-03 01:36:12"},{"id":8,"name":"Hoa m\u1eebng l\u1ec5","created_at":"2019-05-28 17:12:58","updated_at":"2019-06-03 01:36:20"},{"id":11,"name":"Hoa t\u00ecnh y\u00eau","created_at":"2019-05-28 17:41:37","updated_at":"2019-06-03 01:36:29"}]
+[
+    {
+        "id": 1,
+        "name": "Hoa trang tr\u00ed",
+        "created_at": "2019-05-28 16:20:56",
+        "updated_at": "2019-06-03 01:35:52"
+    },
+    {
+        "id": 2,
+        "name": "Hoa c\u01b0\u1edbi",
+        "created_at": "2019-05-28 16:21:36",
+        "updated_at": "2019-06-03 01:35:58"
+    },
+    {
+        "id": 3,
+        "name": "Hoa sinh nh\u1eadt",
+        "created_at": "2019-05-28 16:21:40",
+        "updated_at": "2019-06-03 01:36:05"
+    },
+    {
+        "id": 7,
+        "name": "Hoa chia bu\u1ed3n",
+        "created_at": "2019-05-28 17:01:34",
+        "updated_at": "2019-06-03 01:36:12"
+    },
+    {
+        "id": 8,
+        "name": "Hoa m\u1eebng l\u1ec5",
+        "created_at": "2019-05-28 17:12:58",
+        "updated_at": "2019-06-03 01:36:20"
+    },
+    {
+        "id": 11,
+        "name": "Hoa t\u00ecnh y\u00eau",
+        "created_at": "2019-05-28 17:41:37",
+        "updated_at": "2019-06-03 01:36:29"
+    }
+]
