@@ -1,7 +1,7 @@
 
 @extends('layouts.shop_master')
 @section('title')
-    Checkout
+    Thanh toán
 @endsection
 @section('content')
         <div class="cl

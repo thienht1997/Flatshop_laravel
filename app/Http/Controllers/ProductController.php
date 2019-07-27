@@ -52,6 +52,7 @@ class ProductController extends Controller
         $product->name = $request->name;
         $product->price = $request->price;
         $product->category_id = $request->category_id;
+        $product->content = $request->content;
         $product->sale = $request->sale;
         
         if ($request->hasFile('image')) {

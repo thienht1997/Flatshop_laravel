@@ -1,6 +1,6 @@
 @extends('layouts.shop_master')
 @section('title')
-Detail
+Chi tiết sản phẩm
 @endsection
 @section('content')
 <div class="clearfix">
@@ -32,7 +32,7 @@ Detail
             </h5>
   
             <p>
-              Bó hoa được thiết kế với tông hồng ngọt ngào dễ dàng đốn tim bất kỳ ai được nhận. Hình ảnh người con gái thùy mị, nết na trước đây dường như đã thay đổi. Thay vào đó là người con gái tự lập, mạnh mẽ. Có thể nhiều nơi, hình ảnh người con gái mạnh mẽ không được coi trọng, thế nhưng dần dần mọi định kiến sẽ thay đổi hòa hợp với xã hội hơn. Dù vậy thì nét thơ ngây làm anh say đắm vẫn không thể thay đổi theo thời gia
+              {{$product->content}}
             </p>
             <hr class="border">
             <div class="price">
@@ -90,13 +90,14 @@ Detail
         </div>
         <div id="productsDetails" class="hot-products">
 
-          <h1> Hot Product</h1>
+          <h4> Sản phẩm Hot khác</h4><br><br>
         </div>
       </div>
     </div>
 
-    <li>
+    
       <div class="row">
+        <li>
         @foreach($products as $key => $product)
         <div class="col-md-3 col-sm-6">
           <div class="products">
@@ -114,8 +115,7 @@ Detail
         @endforeach
       </div>
     </li>
-    </li>
-    </ul>
+    
   </div>
   <div class="clearfix">
   </div>

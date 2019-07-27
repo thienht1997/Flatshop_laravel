@@ -53,6 +53,10 @@ Edit
 											</select>
 									</div>
 									<div class="form-group" >
+											<label>Nội dung</label>
+											<textarea class="form-control" name="content" rows="5" id="comment">{{ $product->content }}</textarea>
+										</div>
+									<div class="form-group" >
 										<label>Ảnh sản phẩm</label>
 										<input id="img" type="file" name="img" class="form-control hidden" onchange="changeImg(this)">
 										@if(($product->image) == null)

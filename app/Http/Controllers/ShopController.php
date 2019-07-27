@@ -14,10 +14,10 @@ class ShopController extends Controller
         $category = Category::find($id);
         $categories = Category::all();
         if($id=='all'){
-        $products =Product::where('id','<', 40)
-                            ->take(18)
+        $products =Product::where('id','<', 20)
+                            ->take(20)
                             ->get();
-        $products_1 =Product::where('id','>=', 40)
+        $products_1 =Product::where('id','>=', 20)
                             ->take(100)
                             ->get();
         }

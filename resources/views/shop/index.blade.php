@@ -1,7 +1,7 @@
 @extends('layouts.shop_master')
 
 @section('title')
-Home
+Flatshop Shop hoa tươi online
 @endsection
 @section('content')
 

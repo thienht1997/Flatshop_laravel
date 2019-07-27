@@ -77,7 +77,7 @@
                              <form action="{{route('shop.search')}}"  method="get">
                                    @csrf
                                    <input class="search-submit" type="submit" value="">
-                                   <input class="search-input" placeholder="Enter your search term..." type="text" value="" name="keyword"  value="{{ (isset($_GET['keyword'])) ? $_GET['keyword'] : '' }}">
+                                   <input class="search-input" placeholder="Bạn muốn tìm gì?" type="text" value="" name="keyword"  value="{{ (isset($_GET['keyword'])) ? $_GET['keyword'] : '' }}">
                                  </form>
                              </li>
                              <li class="option-cart">
@@ -86,12 +86,13 @@
                                    @foreach ($product_data   as $product)
                                         
                                    <li style="position: relative; left: 12px; top: 23px; height:20px">
-                                       <img style="width: 50px; height: 30px; left: -2px; top: -51px; transition: none 0s ease 0s; cursor: move;" src="{{ asset('layouts/img/'.$product->options->img)}}" class="thumbnail" data-selected="true" data-label-id="0">
+                                       <img style="width:45px; height: 50px; left: -2px; top: -51px; transition: none 0s ease 0s; cursor: move;" src="{{ asset('layouts/img/'.$product->options->img)}}" class="thumbnail" data-selected="true" data-label-id="0">
                                        {{$product->name}}
                                     
                                    </li>
                                    @endforeach
-                                 <li><span class="total">Total <strong>{{Cart::total()}}VNĐ</strong></span></li>
+                                 <li><span class="total"></span></li>
+                                 <li><span class="total">Tổng cộng <strong>{{Cart::total()}}VNĐ</strong></span></li>
                                 </ul>
                              </li>
                           </ul>
@@ -99,7 +100,7 @@
                           <div class="navbar-collapse collapse">
                              <ul class="nav navbar-nav">
                                 <li class="active dropdown">
-                                <a href="{{route('shop.index','all')}}" class="dropdown-toggle" data-toggle="dropdown">Home</a>
+                                <a href="{{route('shop.index','all')}}" class="dropdown-toggle">Home</a>
                                    {{-- <div class="dropdown-menu">
                                       <ul class="mega-menu-links">
                                          <li><a href="{{route('shop.index','all')}}">home</a></li>

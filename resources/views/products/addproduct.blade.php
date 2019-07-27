@@ -57,6 +57,10 @@ Add product
 											</select>
 									</div>
 									<div class="form-group" >
+											<label>Nội dung giới thiệu</label><br>
+											<textarea class="form-control" name="content" rows="5" id="comment"></textarea>
+									</div>
+									<div class="form-group" >
 										<label>Ảnh sản phẩm</label>
 										<img id="avatar" class="thumbnail" width="300px" src="img/new_seo-10-512.png">									
 								

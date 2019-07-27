@@ -99,7 +99,7 @@ Admin
 												<p> Trống </p>
 												@else 
 												<center>
-												<img width="100px" height="80px" src="img/{{$product->image}}" class="thumbnail">
+												<img width="90px" height="100px" src="img/{{$product->image}}" class="thumbnail">
 												</center>
 												@endif
 											</td>

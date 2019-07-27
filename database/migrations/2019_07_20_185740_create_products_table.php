@@ -21,7 +21,7 @@ class CreateProductsTable extends Migration
             $table->bigInteger('category_id')->unsigned();
             // $table->string('content');
             $table->integer('sale');
-            
+            $table->string('content', 900);
             $table->foreign('category_id')->references('id')->on('categories');
             $table->timestamps();
         });

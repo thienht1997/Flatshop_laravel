@@ -1,7 +1,7 @@
 
 @extends('layouts.shop_master')
 @section('title')
-    Shopping cart
+    Giỏ hàng
 @endsection
 @section('content')
         <script>
@@ -37,7 +37,7 @@
           <div class="row">
             <div class="col-md-12">
               <h3 class="title">
-                Shopping Cart
+                Giỏ hàng
               </h3>
               <div class="clearfix">
               </div>
@@ -45,22 +45,22 @@
                 <thead>
                   <tr>
                     <th>
-                      Image
+                      Hình ảnh
                     </th>
                     <th>
-                      Details
+                      Tên sản phẩm
                     </th>
                     <th>
-                      Price
+                      Giá
                     </th>
                     <th>
-                      Quantity
+                      Số lượng
                     </th>
                     <th>
-                      Price
+                      Tổng giá
                     </th>
                     <th>
-                      Delete
+                    
                     </th>
                   </tr>
                 </thead>
@@ -69,21 +69,19 @@
                   <tr>
                            
                     <td>
-                      <img src="{{ asset('layouts/img/'.$product->options->img)}}" class="thumbnail">
+                        <img width="90px" height="100px" src="{{ asset('layouts/img/'.$product->options->img)}}" class="thumbnail">
                     </td>
                     <td>
                       <div class="shop-details">
                         <div class="productname">
-                          {{$product->name}}
+                            {{$product->name}}
                         </div>
                         <p>
-                    
-                          <a class="review_num" href="#">
-                
-                          </a>
+                            {{$product->content}}
+                          
                         </p>  
                         <p>
-                          Product Category : 
+                          
                           <strong class="pcode">
                             {{$product->category['name']}}
                           </strong>
@@ -116,16 +114,16 @@
               </table>
               
               <div>
-                  <h4>Total Price: {{$total_price}}đ</h4><br>
-                  <a href="{{route('shop.index','all')}}"><button>Continue Buy </button></a>               
-                  <a href="{{route('cart.detele','all')}}"><button  onclick="return confirm('Are you sure you want to delete all item?')">Detele all item</button></a>
+                  <h4>Tổng cộng: {{$total_price}}đ</h4><br>
+                  <a href="{{route('shop.index','all')}}"><button>Tiếp tục mua </button></a>               
+                  <a href="{{route('cart.detele','all')}}"><button  onclick="return confirm('Are you sure you want to delete all item?')">Xóa tất cả</button></a>
                 </div>
                <br>
                <br>
                <br>
                <br>
                <br>
-                <h3>Confirm Payment</h3><br><br><br>
+                <h3>Xác nhận thanh toán</h3><br><br><br>
                 @if(Session::has('success'))
 			      <div class="alert alert-success">
 				      <ul>
@@ -144,15 +142,15 @@
             
               <form method="POST" action="{{route('cart.payment')}}">
                 @csrf
-                <h5>Email address</h5>
+                <h5>Email</h5>
                 <input class="form-control" type="email" name="email"><br>
-                <h5>Name</h5>
+                <h5>Họ và tên</h5>
                 <input class="form-control" type="text" name="name"><br>
-                <h5>Phone Number</h5>
+                <h5>Số điện thoại liên hệ</h5>
                 <input class="form-control" type="number" name="number"><br>
-                <h5>Address</h5>
+                <h5>Địa chỉ</h5>
                 <input class="form-control" type="text" name="address"><br><br>
-                <button type="submit">Payment</button>
+                <button type="submit">Xác nhận</button>
               </form>
               <div class="clearfix">
               </div>
