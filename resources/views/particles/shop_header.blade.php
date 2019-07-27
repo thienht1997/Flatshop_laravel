@@ -99,8 +99,8 @@
                           <div class="navbar-collapse collapse">
                              <ul class="nav navbar-nav">
                                 <li class="active dropdown">
-                                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Home</a>
-                                   <div class="dropdown-menu">
+                                <a href="{{route('shop.index','all')}}" class="dropdown-toggle" data-toggle="dropdown">Home</a>
+                                   {{-- <div class="dropdown-menu">
                                       <ul class="mega-menu-links">
                                          <li><a href="{{route('shop.index','all')}}">home</a></li>
                                          <li><a href="{{route('shop.index','all')}}">Productlitst</a></li>
@@ -111,7 +111,7 @@
                                          <li><a href="{{route('shop.index','all')}}">CheckOut2</a></li>
                                          <li><a href="{{route('shop.index','all')}}">contact</a></li>
                                       </ul>
-                                   </div>
+                                   </div> --}}
                                 </li>
                                 <li class="dropdown">
                                    <a href="{{route('shop.index','all')}}" class="dropdown-toggle" data-toggle="dropdown">Categories</a>

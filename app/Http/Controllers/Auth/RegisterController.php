@@ -68,6 +68,6 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'level' => '3',
             'password' => Hash::make($data['password']),
-        ]);
+        ])->with('success', 'Tạo tài khoản thành công');;
     }
 }

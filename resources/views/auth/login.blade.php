@@ -14,7 +14,7 @@
             <h6> Username: demo@gmail.com</h6>
             <h6> password: demo123456789)</h6>
             </span>
-
+            
             <div class="wrap-input100 validate-input m-b-20" data-validate="Enter username or email">
                 <input id="email" type="email" class="input100" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="username or email">
                 @error('email')

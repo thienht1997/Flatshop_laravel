@@ -19,8 +19,7 @@ Home
                   <h1>Buy your flower</h1>
                </div>
                <div class="flat-caption caption3 formLeft delay500 text-center">
-                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br>Lorem Ipsum is simply
-                     dummy text of the printing and typesetting</p>
+                  <p>Flatshop luôn cam kết đặt chất lượng hoa luôn tươi mới lên hàng đầu giao cho khách. Các mẫu hoa luôn được cắm đủ số lượng và giống kiểu dáng trên website nhất có thể.</p>
                </div>
             <div class="flat-button caption4 formLeft delay600 text-center"><a class="more" href="{{route('shop.index', 'all')}}">More Details</a>
                </div>
@@ -32,7 +31,7 @@ Home
                   <h1>Flower shop</h1>
                </div>
                <div class="flat-caption caption3 formLeft delay500">
-                  <h2>Etiam velit purus, luctus vitae velit sedauctor<br>egestas diam, Etiam velit purus.</h2>
+                  <h2>Chúng tôi hướng đến một dịch vụ chuyên nghiệp trong việc truyền tải những thông điệp, cảm xúc.</h2>
                </div>
                <div class="flat-button caption5 formLeft delay600"><a class="more" href="{{route('shop.index', 'all')}}">More Details</a></div>
                <div class="flat-image formBottom delay200" data-bottom="true"><img src="images/slider-image-02.png"
@@ -43,8 +42,7 @@ Home
                   <h1>Flower shop</h1>
                </div>
                <div class="flat-caption caption3 formLeft delay500 text-center">
-                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. <br>Lorem Ipsum is
-                     simply dummy text of the printing and typesetting</p>
+                  <p>Chúng tôi hiểu mức độ quan trọng trong công việc của mình là truyền tải đúng và đủ thông điệp của người tặng đến người nhận.</p>
                </div>
                <div class="flat-button caption4 formLeft delay600 text-center"><a class="more" href="{{route('shop.index', 'all')}}">More Details</a>
                </div>
@@ -74,9 +72,9 @@ Home
 <div class="container_fullwidth">
    <div class="container">
       <div class="hot-products">
-         <h3 class="title"><strong>Sản phẩm |</strong> 
+         <h3 class="title"><strong>Sản phẩm </strong> 
             @if (!$category)
-            All</h3>
+            </h3>
             @else
             {{$category->name}}</h3>
             @endif
@@ -155,13 +153,17 @@ Home
                         </div>
                      </div>
                   @endforeach
+                  
             </li>
          </ul>
       </div>
+   
       <div class="clearfix"></div>
       <div class="clearfix"></div>
+     
    </div>
 </div>
 <div class="clearfix"></div>
+
 
 @endsection

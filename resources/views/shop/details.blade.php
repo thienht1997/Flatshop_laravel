@@ -32,9 +32,7 @@ Detail
             </h5>
   
             <p>
-              Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus. Sed et lorem nunc. Vestibulum ante
-              ipsum primis in faucibus orci luctus et ultrie ces posuere cubilia curae. Proin lectus ipsum, gravida etds
-              mattis vulps utate, tristique ut lectus. Sed et lorem nunc...
+              Bó hoa được thiết kế với tông hồng ngọt ngào dễ dàng đốn tim bất kỳ ai được nhận. Hình ảnh người con gái thùy mị, nết na trước đây dường như đã thay đổi. Thay vào đó là người con gái tự lập, mạnh mẽ. Có thể nhiều nơi, hình ảnh người con gái mạnh mẽ không được coi trọng, thế nhưng dần dần mọi định kiến sẽ thay đổi hòa hợp với xã hội hơn. Dù vậy thì nét thơ ngây làm anh say đắm vẫn không thể thay đổi theo thời gia
             </p>
             <hr class="border">
             <div class="price">
