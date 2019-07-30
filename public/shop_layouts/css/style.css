@@ -2875,3 +2875,16 @@ option {
         margin-bottom: 20px;
     }
 }
+.thumbnail {
+  
+    overflow: hidden;
+
+  }
+
+  .thumbnail img {
+   
+    transition-duration: 0.3s;
+  }
+
+  .thumbnail img:hover {
+    transform: scale(1.2);
