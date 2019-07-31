@@ -105,7 +105,7 @@ Chi tiết sản phẩm
             <div class="thumbnail"><a href="{{route('shop.details',  $product->id)}}"><img width="183" height="80"
                   src="{{ asset('layouts/img/'.$product->image) }}" alt="Product Name"></a></div>
             <div class="productname">{{$product->name}}</div>
-            <h4 class="price">{{$product->price}}</h4>
+            <h4 class="price">{{number_format($product->price,0 ,',','.')}}đ</h4>
             <strike class="price" style="color:gray; font-size:15px">{{number_format($product->price/80*100,0 ,',','.')}}đ</strike>
             <div class="button_group"><a href="{{route('cart.add', $product->id)}}"><button class="button add-cart" type="button"><span class="glyphicon glyphicon-shopping-cart"></span></button></a><button class="button compare" type="button"><i
                     class="fa fa-exchange"></i></button><button class="button wishlist" type="button"><i
@@ -113,10 +113,10 @@ Chi tiết sản phẩm
           </div>
         </div>
         @endforeach
-      </div>
-    </li>
+      
+       </li>
     
-  </div>
+      </div>
   <div class="clearfix">
   </div>
 </div>
