@@ -44,7 +44,9 @@ class ShopController extends Controller
     public function details($id)
     {
         $product_data =  Cart::content();
-        $products = Product::paginate(5);
+        $products = Product::where('id','<', 20)
+                        ->take(15)
+                        ->get();
         $product = Product::findOrFail($id);
         $categories = Category::all();
         return view('shop.details', compact('products','product', 'categories','product_data'));
